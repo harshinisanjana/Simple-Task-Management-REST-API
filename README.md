@@ -2,7 +2,7 @@
 
 This is my submission for Simple Task Management API. I’ve built a RESTful API to manage tasks using Node.js, Express, and MySQL. I focused on making the code modular and "production-ready" by using a layered architecture. I also included some of the bonus features like Dockerization and Pagination to show how I handle more complex requirements.
 
-## 🚀 Quick Start (The easiest way)
+## Quick Start (The easiest way)
 The fastest way to get this running is using Docker. I've set up a docker-compose file that handles the networking between the Node app and the MySQL database automatically.
 1. Clone the repo.
 2. Run: `docker-compose up --build`
@@ -10,7 +10,7 @@ The fastest way to get this running is using Docker. I've set up a docker-compos
 
 *(Note: I added a health check in the compose file so the app waits for the DB to be fully ready before it starts up.)*
 
-## 🛠️ Tech Stack & Design Choices
+## Tech Stack & Design Choices
 - **Backend:** Node.js with Express.
 - **Database:** MySQL (using `mysql2` for performance and prepared statements).
 - **Architecture:** I followed a Controller-Service-Repository pattern.
@@ -18,7 +18,7 @@ The fastest way to get this running is using Docker. I've set up a docker-compos
 - **ID System:** I used UUIDs instead of auto-incrementing integers. It’s a bit more secure because it prevents people from guessing how many tasks are in the system.
 - **Validation:** Used Zod to validate incoming requests. If the data is wrong, the API returns a clean 400 error instead of just crashing.
 
-## 📌 API Endpoints
+## API Endpoints
 All routes require a simple Bearer token for authentication.  
 **Header:** `Authorization: Bearer secret-token`
 
@@ -29,7 +29,7 @@ All routes require a simple Bearer token for authentication.
 | PATCH | `/api/tasks/:id` | Update task status (Pending/In-Progress/Completed). |
 | DELETE | `/api/tasks/:id` | Soft delete a task. |
 
-## 📂 Project Structure
+## Project Structure
 ```plaintext
 /src
   ├── controllers/  # Request/Response handling
@@ -41,7 +41,7 @@ All routes require a simple Bearer token for authentication.
   └── schema.sql    # Database schema for MySQL initialization
 ```
 
-## 🛠️ Setup Instructions
+## Setup Instructions
 
 ### Option 1: Using Docker (Recommended)
 This method requires zero configuration.
@@ -73,13 +73,13 @@ This method requires zero configuration.
    ```
    *(The terminal will show `Server is running on port 3000`)*
 
-## 🧪 Testing
+## Testing
 I’ve included a Postman Collection (`Task_Management_API_Collection.json`) in the root folder.
 1. Import it into Postman.
 2. Set the `base_url` variable to `http://localhost:3000`.
 3. I've also written a few test scripts inside the collection to automatically check if the status codes are correct.
 
-## 💻 cURL Commands
+## cURL Commands
 You can test the API interactively from a terminal (Use **Git Bash** or a Linux/Unix terminal for these exactly as written):
 
 **1. Create a Task:**
